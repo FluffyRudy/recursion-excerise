@@ -61,4 +61,21 @@ function merge(array, low, mid, high) {
 
 const array = [5, 2, 8, 3, 9];
 mergeSort(array, 0, array.length-1);
-console.log(array)
+console.log(array);
+
+/*************************************** */
+/**
+ * Sorts an array using the merge sort algorithm without mutating the original array.
+ *
+ * @param {Array} array - The array to be sorted.
+ * @returns {Array} - A new array that is a sorted copy of the input array.
+ */
+function unmutatingMergeSort(array) {
+    const copiedArray = array.slice();
+    mergeSort(copiedArray, 0, copiedArray.length-1);
+    return copiedArray;
+}
+
+const anotherArray = [5, 2, 8, 3, 1, 9];
+const result = (unmutatingMergeSort(anotherArray));
+console.log(anotherArray, result);
